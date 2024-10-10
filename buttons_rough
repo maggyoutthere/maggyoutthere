@@ -1,0 +1,35 @@
+<html>
+<body>
+<div class="question">
+  <p>How many sides does a hexagon have?</p>
+  <button class="wrongAnswer" onclick="showResult(this)">2</button>
+  <button class="wronger-answer" onclick="showResult(this)">5</button>
+  <button class="right-answer" onclick="showResult(this)">6</button>
+  <button class="wrong-answer" onclick="showResult(this)">10</button>
+</div>
+
+<div>
+  <p id="answer"></p>
+</div>
+<script>
+var _i = 0;
+var _wrongs = ['Incorrect!', 'Wrong!', 'Try Again!'];
+var _wrongsalt = ['Incorrectttt!', 'Wronfdsdfg!', 'Try sdfsdfAgain!'];
+
+function showResult(b) {
+  var res = document.getElementById('answer');
+  if (b.classList.contains('right-answer')) {
+    res.innerHTML = 'Correct'
+  } 
+  if (b.classList.contains('wronger-answer')) {
+    res.innerHTML = _wrongsalt[_i];
+    _i = _i > 1 ? 0 : _i + 1;
+  }
+  else {
+    res.innerHTML = _wrongs[_i];
+    _i = _i > 1 ? 0 : _i + 1;
+  }
+}
+</script>
+</body>
+</html>
